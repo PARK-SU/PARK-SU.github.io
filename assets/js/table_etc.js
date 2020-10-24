@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 function makeETCTable() {
     table = $("#table_diff").DataTable({
-        searching: currentURL != "/" 
+        searching: currentURL != "/" && currentURL != "/index.html"
                    ? true
                    : false,
         paging: false,
@@ -22,18 +22,18 @@ function makeETCTable() {
         },
 
         ajax: {
-            "url": currentURL != "/"
+            "url": currentURL != "/" && currentURL != "/index.html"
                    ? data_link += "bmsinfo"
                    : data_link += "sabun7",
             "dataSrc": ""
         },
 
-        columns: currentURL != "/"
+        columns: currentURL != "/" && currentURL != "/index.html"
                  ? infoColumns
                  : homeColumns,
 
         createdRow: function(row, data) {
-            if (data.proposal_level === "" && currentURL === "/") {
+            if (data.proposal_level === "") {
                 $(row).empty();
             }
         },
