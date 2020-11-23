@@ -16,7 +16,7 @@ function makeETCTable() {
         lengthChange: false,
 
         language: {
-            url: getLanguage === "ko-KR" || getLanguage === "ko"
+            url: getLanguage === "ko-KR" || getLanguage === "ko-kr" || getLanguage === "ko"
                  ? "//cdn.datatables.net/plug-ins/1.10.21/i18n/Korean.json"
                  : "//cdn.datatables.net/plug-ins/1.10.21/i18n/Japanese.json"
         },

@@ -30,7 +30,7 @@ function makeBMSTable(header) {
         lengthChange: false,
 
         language: {
-            url: getLanguage === "ko-KR" || getLanguage === "ko"
+            url: getLanguage === "ko-KR" || getLanguage === "ko-kr" || getLanguage === "ko"
                  ? "//cdn.datatables.net/plug-ins/1.10.21/i18n/Korean.json"
                  : "//cdn.datatables.net/plug-ins/1.10.21/i18n/Japanese.json"
         },
@@ -65,7 +65,7 @@ function makeBMSTable(header) {
         },
 
         initComplete: function() { // Filter
-            if (getLanguage === "ko-KR" || getLanguage === "ko") { // Filter by Korean
+            if (getLanguage === "ko-KR" || getLanguage === "ko-kr" || getLanguage === "ko") { // Filter by Korean
                 this.api().columns(0).every(function() {
                     var column = this;
                     var select = $("<div class='dataTables_length' style='float:left'>레벨 필터: <select class='form-control'><option value=''>Level</option></select></div>")
@@ -210,7 +210,7 @@ var tableData = {
 
     // Comment
     tableComment: function(data, type, row) {
-        if (getLanguage === "ko-KR" || getLanguage === "ko") {
+        if (getLanguage === "ko-KR" || getLanguage === "ko-kr" || getLanguage === "ko") {
             return row.comment_kr;
         } else {
             return data;
