@@ -3,7 +3,9 @@ $(document).ready(function() {
     $.getJSON($("meta[name=bmstable]").attr("content"), function(header) {
         mark = header.symbol;
         getLanguage = navigator.language;
-        makeChangelog(header.changelog_url);
+        if (header.last_update != null) $("#update").text("Last Update : " + header.last_update);
+        if (header.enum_level_order != null) $.fn.dataTable.enum(header.enum_level_order);
+        if (header.changelog_url != null) makeChangelog(header.changelog_url);
         makeBMSTable(header);
     });
 });
@@ -24,15 +26,15 @@ function makeChangelog(url) {
 
 // BMS table
 function makeBMSTable(header) {
-    table = $("#table_diff").DataTable({
+    $("#table_diff").DataTable({
         paging: false,
         info: false,
         lengthChange: false,
 
         language: {
             url: getLanguage === "ko-KR" || getLanguage === "ko-kr" || getLanguage === "ko"
-                 ? "//cdn.datatables.net/plug-ins/1.10.21/i18n/Korean.json"
-                 : "//cdn.datatables.net/plug-ins/1.10.21/i18n/Japanese.json"
+                 ? "//cdn.datatables.net/plug-ins/1.10.22/i18n/Korean.json"
+                 : "//cdn.datatables.net/plug-ins/1.10.22/i18n/Japanese.json"
         },
 
         ajax: {
@@ -74,18 +76,17 @@ function makeBMSTable(header) {
                             var val = $.fn.dataTable.util.escapeRegex(
                                 $(this).find("select").val()
                             );
-
-                            column
-                                .sort(function(a, b) {
-                                    return a - b; // a - b는 오름차순, b - a 는 내림차순
-                                })
-                                .search(val ? "^" + val + "$" : "", true, false)
-                                .draw();
+                            column.search(val ? "^" + val + "$" : "", true, false).draw();
                         });
-
-                    column.data().unique().each(function(d, j) {
-                        select.find("select").append("<option value='" + mark + d + "'>" + d + "</option>")
-                    });
+                    column
+                        .data()
+                        .unique()
+                        .sort(function(a, b) {
+                            return parseInt(a) - parseInt(b); // a - b는 오름차순, b - a 는 내림차순
+                        })
+                        .each(function(d, j) {
+                            select.find("select").append("<option value='" + mark + d + "'>" + d + "</option>")
+                        });
                 });
             } else { // Filter by Japanese
                 this.api().columns(0).every(function() {
@@ -96,18 +97,17 @@ function makeBMSTable(header) {
                             var val = $.fn.dataTable.util.escapeRegex(
                                 $(this).find("select").val()
                             );
-
-                            column
-                                .sort(function(a, b) {
-                                    return a - b; // a - b는 오름차순, b - a 는 내림차순
-                                })
-                                .search(val ? "^" + val + "$" : "", true, false)
-                                .draw();
+                            column.search(val ? "^" + val + "$" : "", true, false).draw();
                         });
-
-                    column.data().unique().each(function(d, j) {
-                        select.find("select").append("<option value='" + mark + d + "'>" + d + "</option>")
-                    });
+                    column
+                        .data()
+                        .unique()
+                        .sort(function(a, b) {
+                            return parseInt(a) - parseInt(b); // a - b는 오름차순, b - a 는 내림차순
+                        })
+                        .each(function(d, j) {
+                            select.find("select").append("<option value='" + mark + d + "'>" + d + "</option>")
+                        });
                 });
             }
         }
