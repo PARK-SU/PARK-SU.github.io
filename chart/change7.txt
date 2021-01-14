@@ -1,4 +1,5 @@
-﻿(2021.01.10) Gecko [Japonicus] Fixed.
+﻿(2021.01.14) 時計仕掛けの少女 [Randomizer] Added.
+(2021.01.10) Gecko [Japonicus] Fixed.
 (2021.01.09) Gecko [Japonicus] Added.
 (2021.01.03) よ群青宴 Added.
 (2020.12.31) +i m a z i n e x o+ Added.
