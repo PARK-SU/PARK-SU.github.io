@@ -4,6 +4,7 @@
 (2021.02.10) Run Away [from Akina] Added.
 (2021.02.07) Lapis [KF], A c i - L - W e i r D, スプラッシュコード－０６ [KF], Cynic (THE DARKSABUN), Espresso Shots [乱打と速度], Stargazer [Ondomizer], 88D [Oh!], Funny Funky Freaky [Filthy] Added. (GENOCIDE Reinterpretation 参加差分)
 (2021.02.01) タマモッチ -Dystopia- Added. (with 七海)
+(2021.01.20) 雪月夜鐘 [Randomizest] Added.
 (2021.01.18) Yes namer (Original Title : No namer) Added.
 (2021.01.14) 時計仕掛けの少女 [Randomizer] Added.
 (2021.01.10) Gecko [Japonicus] Fixed.
