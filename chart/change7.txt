@@ -1,4 +1,5 @@
-﻿(2021.02.26) worlds [EZ] Added.
+﻿(2021.02.27) DEYANEN [連打リハビリ] Added.
+(2021.02.26) worlds [EZ] Added.
 (2021.02.20) STAR TRACK (NiraicA_nai Mix) (Kuso Edition) Added.
 (2021.02.16) Skydive [Normal], [Hyper], [-------] Added.
 (2021.02.13) "Fresco" [MiG-17], [Микоян и Гуревич МиГ-17] Added.
