@@ -1,216 +1,47 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
 <head>
+    <title>5K 差分</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="bmstable" content="/assets/json/header_5i.json">
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script>
+        var request = new XMLHttpRequest();
+        request.open("GET", "change5.txt", true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                var resp = request.responseText;
+                document.querySelector("#changelog").innerHTML = resp;
+            }
+        };
+        request.send();
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="bmstable" content="/assets/json/header_5i.json">
-
-  <title>5K BMS - PARKSU LAB</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" crossorigin="anonymous">
-
-  <!-- Custom styles for this template-->
-  <link href="/assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="/assets/css/table.css" rel="stylesheet">
-
+    </script>
+    <script src="/assets/js/table.js"></script>
 </head>
 
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-        <div class="sidebar-brand-icon">
-          <i class="fas fa-flask"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">PARKSU LAB</div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Home</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Menu
-      </div>
-
-      <!-- Nav Item - BMS Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBMS" aria-expanded="true" aria-controls="collapseBMS">
-          <i class="fas fa-fw fa-table"></i>
-          <span>BMS</span>
-        </a>
-        <div id="collapseBMS" class="collapse" aria-labelledby="headingBMS" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="/chart/sabun5.html">5K BMS</a>
-            <a class="collapse-item" href="/chart/sabun7.html">7K BMS</a>
-          </div>
-        </div>
-      </li>
-	  
-      <!-- Nav Item - Link -->
-      <li class="nav-item">
-        <a class="nav-link" href="/chart/info.html">
-          <i class="fas fa-fw fa-link"></i>
-          <span>Link</span></a>
-      </li>
-
-	  <!-- Nav Item - Blog -->
-      <li class="nav-item">
-        <a class="nav-link" href="https://bmslog.parksulab.xyz/">
-          <i class="fas fa-fw fa-edit"></i>
-          <span>Blog</span></a>
-      </li>
-	  
-      <!-- Nav Item - Video Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVideo" aria-expanded="true" aria-controls="collapseVideo">
-          <i class="fas fa-fw fa-play"></i>
-          <span>Video</span>
-        </a>
-        <div id="collapseVideo" class="collapse" aria-labelledby="headingVideo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="https://www.youtube.com/channel/UCy0ynd-bYB0szeF1nV8B3Fw">YouTube</a>
-            <a class="collapse-item" href="https://www.twitch.tv/parksulab">Twitch</a>
-          </div>
-        </div>
-      </li>
-
-      
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link-secondary d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
-
-        </nav>
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">5K BMS</h1><br>
-          <p class="mb-4">
-		    레벨은 EZ2AC 난이도를 이용해 표시합니다. 파란색은 최신차분입니다.<br>
-            이 페이지는 BeMusicSeeker를 지원합니다.<br><br>
-            レベルはEZ2AC難易度を利用して表記し、青色は最新の差分です。<br>
-            このページはBeMusicSeekerをサポートします。
-		  </p>
-
-		  <!-- Sabun Changelog -->
-		  <p class="mb-4">
-              <button class="btn btn-secondary btn-icon" id="show_log">View Changelog</button>
-          </p>
-          <p class="mb-4">
-              <textarea name="changelog" id="changelog" cols="50" rows="8" readonly></textarea>
-          </p>
-
-          <!-- Diff Table -->
-          <div class="card shadow mb-4">
-            <div class="card-body">
-              <div class="table-responsive">
-                <table id="table_diff" class="table table-striped table-bordered table-hover text-gray-900 text-center"></table>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Contact : parksu_official#0136 (Discord)</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
+<body>
+    <!-- Title and Index -->
+    <div style="text-align: center;">
+        <font size="6"><b>PARKSU's 5K INSANE BMS</b></font>
+    </div><br><br>
+    <div style="text-align: center;">
+        <font size="3"><a href="/index.html"><b>Home</b></a>&nbsp;<b>|</b>&nbsp;<b><a href="/chart/sabun7.html">7K 差分</a></b>&nbsp;<b>|</b>&nbsp;<b><a href="https://www.youtube.com/playlist?list=PLT_lW8sjDMAAHXHw5y9iWkg2kwgrqJjTe">YouTube差分プレイリスト</a></b></font>
+    </div><br>
+    <div style="text-align: center;"><b>현재 패턴 갯수(現在譜面数) : <span id="total"></span></b></div><br>
+    <div style="text-align: center;"><b>레벨은 EZ2AC 난이도를 이용해 표시합니다.</b></div>
+    <div style="text-align: center;"><b>レベルはEZ2ACの難易度を利用して表示します。</b></div><br>
+    <!-- Sabun Changelog -->
+    <div style="text-align: center;"><textarea name="changelog" id="changelog" cols="50" rows="8" readonly></textarea></div><br>
+    <!-- Sabun Chart -->
+    <div class="tableflame">
+        <table align="center" cellspacing="1" cellpadding="2" bgcolor="#FFFFFF" border="1" bordercolor="#000000" style="text-align: center; border-style: solid; border-width: 2px; border-collapse: collapse;" id="table_int"></table>
+    </div><br>
+    <div style="text-align: center;">
+        <font size="2"><b>Contact : parksu_official#0136 (Discord)</b></font>
     </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="/assets/js/sidebar_toggle.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="/assets/js/sb-admin-2.min.js"></script>
-  
-  <!-- Page level plugins -->
-  <script src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.datatables.net/plug-ins/1.10.24/sorting/natural.js" crossorigin="anonymous"></script>
-
-  <!-- Table Script-->
-  <script src="/assets/js/table.js"></script>
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163956588-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-163956588-1');
-  </script>
-
 </body>
 
 </html>
