@@ -169,8 +169,8 @@ var tableData = {
         return astr;
     },
 
-    // Pattern Download
-    tablePattern: function(data, type, row) {
+    // Chart Download
+    tableChart: function(data, type, row) {
         if (row.url_diff != "") {
             if (data != "") {
                 return "<a href='" + row.url_diff + "' target='_blank'>" + data + "</a>";
@@ -205,7 +205,7 @@ var tableData = {
         }
     },
 
-    // View Pattern
+    // View Chart
     tableScore: function(data, type, row) {
         return "<a href='http://www.ribbit.xyz/bms/score/view?md5=" + data + "' target='_blank'><i class='fas fa-lg fa-music'></i></a>";
     },
@@ -246,7 +246,7 @@ var defaultColumns = [
         "data": "name_diff",
         "orderable": false,
         "searchable": false,
-        "render": tableData.tablePattern
+        "render": tableData.tableChart
     },
     {
         "title": "Date",

@@ -48,7 +48,7 @@ var tableData = {
             return "";
         }
     },
-    tablePattern: function(data, type, row) {
+    tableChart: function(data, type, row) {
         if (row.proposal_level != "") {
             return "<a href='" + data + "'><i class='far fa-lg fa-arrow-alt-circle-down'></i></a>";
         } else {
@@ -103,6 +103,6 @@ var homeColumns = [
         "width": "1%",
         "data": "url_diff",
         "orderable": false,
-        "render": tableData.tablePattern
+        "render": tableData.tableChart
     },
 ]
