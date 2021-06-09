@@ -181,7 +181,11 @@ var tableData = {
             if (data != "") {
                 return data;
             } else {
-                return "同梱";
+                if (getLanguage === "ko-KR" || getLanguage === "ko-kr" || getLanguage === "ko") {
+                    return "동봉";
+                } else {
+                    return "同梱";
+                }
             }
         }
     },
