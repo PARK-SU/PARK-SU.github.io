@@ -1,0 +1,6 @@
+{
+  "name": "PARKSU's 5K Insane BMS",
+  "symbol": "LV ",
+  "level_order": ["12", "13", "14", "15", "16", "17", "18", "19", "??"],
+  "data_url": "https://script.google.com/macros/s/AKfycbwBRXzQ_JRGycDhq2HVoI9_RghUykAZArgDvHJEEW81MqnaOmBsI5LrNIYbe6VsyHw/exec?table=5k"
+}
