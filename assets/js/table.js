@@ -42,7 +42,7 @@ function makeBMSTable() {
     },
 
     language: {
-      url: `//cdn.datatables.net/plug-ins/2.0.2/i18n/${languagePrefix}.json`,
+      url: `//cdn.datatables.net/plug-ins/2.0.3/i18n/${languagePrefix}.json`,
     },
 
     ajax: {
