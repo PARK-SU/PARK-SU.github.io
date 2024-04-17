@@ -178,7 +178,7 @@ const tableData = {
   },
 
   tableScore: function (data) {
-    let scoreURL = "https://ez2pattern.kro.kr/bms/chart?md5=";
+    let scoreURL = "https://bms-score-viewer.pages.dev/view?md5=";
     scoreURL += data;
     if (data) {
       return `<a href='${scoreURL}' target='_blank'>
