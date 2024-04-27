@@ -2,7 +2,7 @@
 let mark = "";
 let data_link = "";
 let isSabunPage = window.location.href.indexOf("sabun");
-$(function () {
+document.addEventListener("DOMContentLoaded", function () {
   async function getJSON() {
     const response = await fetch(
       document.querySelector("meta[name=bmstable]").getAttribute("content")
