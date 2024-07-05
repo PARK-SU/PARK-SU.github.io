@@ -34,8 +34,8 @@ function makeBMSTable() {
               info: {
                 text:
                   languagePrefix === "ko"
-                    ? "차분 갯수: _TOTAL_개"
-                    : "差分数: _TOTAL_",
+                    ? "(검색된) 차분 갯수: _TOTAL_개"
+                    : "（検索された）差分数: _TOTAL_",
               },
             }
           : null,
