@@ -371,9 +371,10 @@ const defaultColumns = [
     render: tableData.tableDate,
   },
   {
-    title: "Gauge",
+    title: getLanguage === "ko" ? "회복량" : "回復量",
     width: "1%",
     orderable: false,
+    className: "text-nowrap",
     render: tableData.tableGauge,
   },
   {
