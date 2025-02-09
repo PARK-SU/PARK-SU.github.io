@@ -42,7 +42,7 @@ function makeBMSTable() {
     },
 
     language: {
-      url: `//cdn.datatables.net/plug-ins/2.2.1/i18n/${languagePrefix}.json`,
+      url: `//cdn.datatables.net/plug-ins/2.2.2/i18n/${languagePrefix}.json`,
     },
 
     ajax: {
@@ -371,7 +371,7 @@ const defaultColumns = [
     render: tableData.tableDate,
   },
   {
-    title: getLanguage === "ko" ? "회복량" : "回復量",
+    title: languagePrefix === "ko" ? "회복량" : "回復量",
     width: "1%",
     orderable: false,
     className: "text-nowrap",
