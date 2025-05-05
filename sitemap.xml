@@ -2,20 +2,15 @@
 <urlset
 	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://bms.parksulab.xyz</loc>
-		<lastmod>2025-03-15T00:00:00+09:00</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://bms.parksulab.xyz/chart/sabun5.html</loc>
-		<lastmod>2025-03-15T00:00:00+09:00</lastmod>
-	</url>
-	<url>
-		<loc>https://bms.parksulab.xyz/chart/sabun7.html</loc>
-		<lastmod>2025-03-15T00:00:00+09:00</lastmod>
+		<loc>https://bms.parksulab.xyz/</loc>
 	</url>
 	<url>
 		<loc>https://bms.parksulab.xyz/chart/info.html</loc>
-		<lastmod>2025-03-15T00:00:00+09:00</lastmod>
+	</url>
+	<url>
+		<loc>https://bms.parksulab.xyz/chart/sabun5.html</loc>
+	</url>
+	<url>
+		<loc>https://bms.parksulab.xyz/chart/sabun7.html</loc>
 	</url>
 </urlset>
