@@ -42,7 +42,7 @@ function makeBMSTable() {
     },
 
     language: {
-      url: `//cdn.datatables.net/plug-ins/2.2.2/i18n/${languagePrefix}.json`,
+      url: `//cdn.datatables.net/plug-ins/2.3.1/i18n/${languagePrefix}.json`,
     },
 
     ajax: {
@@ -323,7 +323,7 @@ const tableData = {
 const defaultColumns = [
   {
     title: "Level",
-    width: "5%",
+    width: "5.75%",
     data: "level",
     render: tableData.tableLevel,
   },
