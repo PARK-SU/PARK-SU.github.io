@@ -101,12 +101,12 @@ function makeChangelog(table) {
     title: "Site Moved.",
     state: "special",
   };
-  const domainChange1 = {
+  const domainTransfer1 = {
     date: "Fri Aug 15 2025 00:00:00 GMT+0900 (JST)",
-    title: "Domain name Changed. (bms.parksulab.xyz → parksu.darksabun.club)",
+    title: "Domain Transferred. (bms.parksulab.xyz → parksu.darksabun.club)",
     state: "special",
   };
-  data.push(blogOpen, siteMove1, siteMove2, domainChange1);
+  data.push(blogOpen, siteMove1, siteMove2, domainTransfer1);
   data.sort((a, b) => new Date(b.date) - new Date(a.date));
   const changelogData = data
     .map(function (song) {
