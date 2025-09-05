@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+
+:root {
+  --bs-font-sans-serif: "Noto Sans KR", "Noto Sans JP", system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .text-secret {
   display: none;
 }
