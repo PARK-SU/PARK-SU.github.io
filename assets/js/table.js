@@ -376,7 +376,7 @@ const defaultColumns = [
     render: tableData.tableDate,
   },
   {
-    title: languagePrefix === "ko" ? "회복량" : "回復量",
+    title: languagePrefix === "ko" ? "회복량<br />(T/N)" : "回復量<br />(T/N)",
     width: "1%",
     orderable: false,
     className: "text-nowrap",
