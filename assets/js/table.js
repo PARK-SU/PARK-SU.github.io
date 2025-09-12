@@ -260,7 +260,7 @@ const tableData = {
 
     if (row.judge) {
       const judgeRank = {
-        ve: "V.EASY",
+        ve: "V.EASY<br />(if LR2, NORMAL)",
         ez: "EASY",
         nm: "NORMAL",
         hd: "HARD",
@@ -268,7 +268,7 @@ const tableData = {
         ran: "???",
         none: "???<br />(if LR2, NORMAL)",
       };
-      judgeRankText = "Judge Rank : " + judgeRank[row.judge];
+      judgeRankText = "Judge Rank: " + judgeRank[row.judge];
     }
 
     if (row.notes === "ran" && row.total === "ran") {
