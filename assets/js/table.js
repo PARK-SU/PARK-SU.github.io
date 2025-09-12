@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = await response.json();
     document.getElementById("changelogText").value = "Loading...";
     document.getElementById("smallTableTitle").innerHTML =
-      "<i class='fas fa-table me-2'></i>" + header.name;
+      "<i class='fa-solid fa-table me-2'></i>" + header.name;
     if (header.symbol) mark = header.symbol;
     if (header.data_url) data_link = header.data_url;
     if (header.level_order) {
@@ -273,11 +273,11 @@ const tableData = {
 
     if (row.notes === "ran" && row.total === "ran") {
       gaugeCaculate = "???";
-      totalNotesStr = "Notes : ???<br />Total : ???<br />" + judgeRankText;
+      totalNotesStr = "Notes: ???<br />Total: ???<br />" + judgeRankText;
     } else if (row.notes === "ran") {
       gaugeCaculate = "???";
       totalNotesStr =
-        "Notes : ???<br />Total : " + row.total + "<br />" + judgeRankText;
+        "Notes: ???<br />Total: " + row.total + "<br />" + judgeRankText;
     } else if (row.total === "0") {
       const notes = Number(row.notes);
 
@@ -290,11 +290,11 @@ const tableData = {
       }
 
       gaugeCaculate = Math.floor((Number(row.total) / notes) * 1000) / 1000;
-      totalNotesStr = `Notes : ${row.notes}<br />Total : 0<br />${judgeRankText}<br />(Based on LR2 gauge calculation formula)`;
+      totalNotesStr = `Notes: ${row.notes}<br />Total: 0<br />${judgeRankText}<br />(Based on LR2 gauge calculation formula)`;
     } else {
       gaugeCaculate =
         Math.floor((Number(row.total) / Number(row.notes)) * 1000) / 1000;
-      totalNotesStr = `Notes : ${row.notes}<br />Total : ${row.total}<br />${judgeRankText}`;
+      totalNotesStr = `Notes: ${row.notes}<br />Total: ${row.total}<br />${judgeRankText}`;
     }
 
     if (gaugeCaculate < 0.18) {
