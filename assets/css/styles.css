@@ -18,6 +18,20 @@ a:hover {
   text-decoration: underline;
 }
 
+summary::marker {
+  content: "\f0da";
+  font-family: "Font Awesome 7 Free";
+  font-weight: 900;
+}
+
+details[open] summary::marker {
+  content: "\f0d7";
+}
+
+textarea {
+  background-color: var(--bs-body-bg);
+}
+
 /* Changelog */
 #changelogText {
   height: 25vh;
@@ -26,17 +40,6 @@ a:hover {
 #changelogText:focus {
   border: 0px;
   box-shadow: none;
-}
-
-summary::marker {
-  content: "\f0da";
-  font-family: "Font Awesome 7 Free";
-  font-weight: 900;
-  color: #000000;
-}
-
-details[open] summary::marker {
-  content: "\f0d7";
 }
 
 /* for All Charts Download Button */
