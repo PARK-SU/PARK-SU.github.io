@@ -385,6 +385,7 @@ const defaultColumns = [
   {
     title: "Comment",
     width: "30%",
+    className: languagePrefix === "ko" ? "lang-ko" : "lang-ja",
     render: tableData.tableComment,
   },
 ];
