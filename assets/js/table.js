@@ -175,6 +175,11 @@ const tableData = {
     return mark + data;
   },
 
+  tableMinIR: function (data) {
+    const scoreBaseURL = `https://www.gaftalk.com/minir/#/viewer/song/${data}/0`;
+    return `<a href="${scoreBaseURL}" target="_blank">MinIR</a>`;
+  },
+
   tableTitle: function (data, type, row) {
     let lr2irURL =
       "http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=";
@@ -347,6 +352,14 @@ const defaultColumns = [
     orderable: false,
     searchable: false,
     render: tableData.tableMovie,
+  },
+  {
+    title: "MinIR",
+    width: "1%",
+    data: "sha256",
+    orderable: false,
+    searchable: false,
+    render: tableData.tableMinIR,
   },
   {
     title: "Title<br />(LR2IR)",
