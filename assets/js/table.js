@@ -5,7 +5,7 @@ let isSabunPage = window.location.href.indexOf("sabun");
 document.addEventListener("DOMContentLoaded", function () {
   async function getJSON() {
     const response = await fetch(
-      document.querySelector("meta[name=bmstable]").getAttribute("content")
+      document.querySelector("meta[name=bmstable]").getAttribute("content"),
     );
     const header = await response.json();
     document.getElementById("changelogText").value = "Loading...";
@@ -42,7 +42,7 @@ function makeBMSTable() {
     },
 
     language: {
-      url: `//cdn.datatables.net/plug-ins/2.3.4/i18n/${languagePrefix}.json`,
+      url: `//cdn.datatables.net/plug-ins/2.3.6/i18n/${languagePrefix}.json`,
     },
 
     ajax: {
@@ -72,10 +72,10 @@ function makeBMSTable() {
         makeFilter(bmsTable);
         // Tooltips
         const tooltipTriggerList = document.querySelectorAll(
-          "[data-bs-toggle='tooltip']"
+          "[data-bs-toggle='tooltip']",
         );
         const tooltipList = [...tooltipTriggerList].map(
-          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
         );
       }
     },
@@ -377,7 +377,7 @@ const defaultColumns = [
     title: "DL",
     width: "1%",
     data: "name_diff",
-    className: "text-nowrap",
+    className: "text-nowrap one-percent-column",
     orderable: false,
     render: tableData.tableChart,
   },
@@ -385,14 +385,14 @@ const defaultColumns = [
     title: "Date",
     width: "5%",
     data: "date",
-    className: "text-center",
+    className: "text-center five-percent-column",
     render: tableData.tableDate,
   },
   {
     title: languagePrefix === "ko" ? "회복량<br />(T/N)" : "回復量<br />(T/N)",
     width: "1%",
     orderable: false,
-    className: "text-nowrap",
+    className: "text-nowrap one-percent-column",
     render: tableData.tableGauge,
   },
   {

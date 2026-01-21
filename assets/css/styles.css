@@ -1,10 +1,12 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=M+PLUS+1+Code&family=Nanum+Gothic+Coding&display=swap");
 
 :root {
-  --bs-font-sans-serif: "Pretendard JP Variable", "Pretendard JP", Pretendard,
-    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif:
+    "Pretendard JP Variable", "Pretendard JP", Pretendard, system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Liberation Sans",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 .text-secret {
@@ -35,6 +37,9 @@ textarea {
 
 /* Changelog */
 #changelogText {
+  font-family: "Fira Code", "M PLUS 1 Code", "Nanum Gothic Coding", monospace;
+  font-weight: 400;
+  font-style: normal;
   height: 25vh;
 }
 
@@ -75,6 +80,14 @@ textarea {
   text-align: center;
   vertical-align: middle;
   font-size: 0.95em;
+}
+
+.five-percent-column {
+  width: 5% !important;
+}
+
+.one-percent-column {
+  width: 1% !important;
 }
 
 /* etc */
