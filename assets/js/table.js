@@ -243,7 +243,7 @@ const tableData = {
         return `<a href='${row.url_diff}' target='_blank'>${data}</a>`;
       } else {
         return `<a href='${row.url_diff}'>
-                  <i class='fa-solid fa-arrow-down fa-lg'></i>
+                  <i class='fa-solid fa-download fa-lg'></i>
                 </a>`;
       }
     } else {
