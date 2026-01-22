@@ -78,7 +78,7 @@ jobs:
           EOF
  
           export TZ='Asia/Seoul'
-          python ../apindex_tool/apindex.py ./sabun
+          python apindex_tool/apindex.py ./sabun
       - name: Commit files
         run: |
           git config --local user.email "${{ secrets.COMMIT_EMAIL }}"
