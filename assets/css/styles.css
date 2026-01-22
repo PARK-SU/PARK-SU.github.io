@@ -7,6 +7,15 @@
     -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Liberation Sans",
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
+  --bs-navbar: #faf0e6;
+}
+
+[data-bs-theme="dark"] {
+  --bs-navbar: #2d2b28;
+}
+
+.navbar-bg-custom {
+  background-color: var(--bs-navbar) !important;
 }
 
 .text-secret {
