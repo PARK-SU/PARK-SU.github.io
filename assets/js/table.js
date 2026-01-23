@@ -65,7 +65,7 @@ function makeBMSTable() {
     },
 
     initComplete: function () {
-      if (isSabunPage !== -1) {
+      if (isSabunPage == -1) {
         // Make Changelog
         makeChangelog(bmsTable);
         // Filter
