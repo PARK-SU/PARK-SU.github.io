@@ -1,7 +1,7 @@
 // Difficulty Table
 let mark = "";
 let data_link = "";
-let isSabunPage = window.location.href.indexOf("sabun");
+let isSabunPage = window.location.href.indexOf("info");
 document.addEventListener("DOMContentLoaded", function () {
   async function getJSON() {
     const response = await fetch(
@@ -29,7 +29,7 @@ function makeBMSTable() {
 
     layout: {
       bottomStart:
-        isSabunPage !== -1
+        isSabunPage == -1
           ? {
               info: {
                 text:
