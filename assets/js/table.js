@@ -385,14 +385,14 @@ const defaultColumns = [
     title: "Date",
     width: "5%",
     data: "date",
-    className: "text-center five-percent-column",
+    className: "text-center five-percent-column font-monospace-custom",
     render: tableData.tableDate,
   },
   {
     title: languagePrefix === "ko" ? "회복량<br />(T/N)" : "回復量<br />(T/N)",
     width: "1%",
     orderable: false,
-    className: "text-nowrap one-percent-column",
+    className: "text-nowrap one-percent-column font-monospace-custom",
     render: tableData.tableGauge,
   },
   {
