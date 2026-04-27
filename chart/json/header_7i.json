@@ -22,6 +22,21 @@
   "course": [
     [
       {
+        "name": "PARKSU in the Shadows...",
+        "constraint": ["grade_mirror", "gauge_lr2", "ln"],
+        "trophy": [
+          { "name": "silvermedal", "missrate": 5.0, "scorerate": 70.0 },
+          { "name": "goldmedal", "missrate": 2.5, "scorerate": 85.0 }
+        ],
+        "md5": [
+          "d26e5a64c2527b7268ce450cc99700c4",
+          "c8f21174051148196ce411f475879d3a",
+          "6866f9e11b58a0df9407484e8bcc6999",
+          "a10a71e34431f64f8950263ccf22428d",
+          "21553b754d994ca11aedcec2bb6e550a"
+        ]
+      },
+      {
         "name": "OPPAN PARKSU STYLE",
         "constraint": ["grade_mirror", "gauge_lr2", "ln"],
         "trophy": [
@@ -33,6 +48,21 @@
           "94b7577cbb11b9205653b694ff8012e9",
           "b1f6eba3617d87275ff6d42c1fa3493a",
           "d86b85e332e24bad3d5cc85c0cdfd677"
+        ]
+      },
+      {
+        "name": "PARKSU Strikes Back",
+        "constraint": ["grade_mirror", "gauge_lr2", "ln"],
+        "trophy": [
+          { "name": "silvermedal", "missrate": 5.0, "scorerate": 70.0 },
+          { "name": "goldmedal", "missrate": 2.5, "scorerate": 85.0 }
+        ],
+        "md5": [
+          "bb2f16f585dd5274dab081facc4b3b69",
+          "905983265bd5b42c2f571fe2553fac16",
+          "21031ac1c4f700c8d22c0dda6e52159d",
+          "aa471eb4643bade6409efde29817f105",
+          "2b9e8d3e87db0a0ff0a455fb8f691d0e"
         ]
       }
     ]
