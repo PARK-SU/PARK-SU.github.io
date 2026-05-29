@@ -175,6 +175,12 @@ const tableData = {
     return mark + data;
   },
 
+  tableMochaIR: function (data) {
+    let MochaIrUrl = "https://mocha-repository.info/song.php?sha256=";
+    MochaIrUrl += data;
+    return `<a href='${MochaIrUrl}' target='_blank'>Mocha</a>`;
+  },
+
   tableTitle: function (data, type, row) {
     let MinIrUrl = `https://www.gaftalk.com/minir/#/viewer/song/${row.sha256}/0`;
     return `<a href='${MinIrUrl}' target='_blank'>${data}</a>`;
@@ -345,6 +351,14 @@ const defaultColumns = [
     orderable: false,
     searchable: false,
     render: tableData.tableMovie,
+  },
+  {
+    title: "Mocha",
+    width: "1%",
+    data: "sha256",
+    orderable: false,
+    searchable: false,
+    render: tableData.tableMochaIR,
   },
   {
     title: "Title<br />(MinIR)",
