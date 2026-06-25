@@ -42,7 +42,7 @@ function makeBMSTable() {
     },
 
     language: {
-      url: `//cdn.datatables.net/plug-ins/2.3.7/i18n/${languagePrefix}.json`,
+      url: `//cdn.datatables.net/plug-ins/2.3.8/i18n/${languagePrefix}.json`,
     },
 
     ajax: {
@@ -175,15 +175,15 @@ const tableData = {
     return mark + data;
   },
 
-  tableMochaIR: function (data) {
-    let MochaIrUrl = "https://mocha-repository.info/song.php?sha256=";
-    MochaIrUrl += data;
-    return `<a href='${MochaIrUrl}' target='_blank'>Mocha</a>`;
+  tableMinIR: function (data) {
+    let minIrUrl = `https://www.gaftalk.com/minir/#/viewer/song/${data}/0`;
+    return `<a href='${minIrUrl}' target='_blank'>MinIR</a>`;
   },
 
   tableTitle: function (data, type, row) {
-    let MinIrUrl = `https://www.gaftalk.com/minir/#/viewer/song/${row.sha256}/0`;
-    return `<a href='${MinIrUrl}' target='_blank'>${data}</a>`;
+    let stellaIrUrl = `https://ir.stellabms.xyz/charts/`;
+    stellaIrUrl += row.md5;
+    return `<a href='${stellaIrUrl}' target='_blank'>${data}</a>`;
   },
 
   tableScore: function (data) {
@@ -353,15 +353,15 @@ const defaultColumns = [
     render: tableData.tableMovie,
   },
   {
-    title: "Mocha",
+    title: "MinIR",
     width: "1%",
     data: "sha256",
     orderable: false,
     searchable: false,
-    render: tableData.tableMochaIR,
+    render: tableData.tableMinIR,
   },
   {
-    title: "Title<br />(MinIR)",
+    title: "Title<br />(STELLA IR)",
     width: "30%",
     data: "title",
     render: tableData.tableTitle,
