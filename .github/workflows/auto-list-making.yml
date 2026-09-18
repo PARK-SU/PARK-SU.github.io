@@ -1,13 +1,19 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
-name: Auto list making with python - PARKSU LAB
+# Build the sabun directory index when needed, then deploy the static site.
+name: Deploy static content to Pages
 
 on:
   push:
-    paths:
-      - "sabun/5/**"
-      - "sabun/7/**"
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -15,16 +21,32 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check for sabun changes
+        id: changes
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" || "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]]; then
+            echo "sabun=true" >> "$GITHUB_OUTPUT"
+          elif git diff --quiet "${{ github.event.before }}" "${{ github.sha }}" -- sabun/5 sabun/7; then
+            echo "sabun=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "sabun=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Checkout apindex
+        if: steps.changes.outputs.sabun == 'true'
         uses: actions/checkout@v4
         with:
           repository: smclt30p/apindex
           path: apindex_tool
       - name: Set up Python 3.8
+        if: steps.changes.outputs.sabun == 'true'
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
-      - name: Auto list making
+      - name: Generate sabun index
+        if: steps.changes.outputs.sabun == 'true'
         run: |
 
           TEMPLATE_PATH=$(find apindex_tool -name "file.template.html" -print -quit)
@@ -79,13 +101,28 @@ jobs:
 
           export TZ='Asia/Seoul'
           python apindex_tool/apindex.py ./sabun
-      - name: Commit files
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Stage site for deployment
         run: |
-          git config --local user.email "${{ secrets.COMMIT_EMAIL }}"
-          git config --local user.name "GitHub Action"
-          git commit -m "PARKSU LAB | Update the file list" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          mkdir -p "$RUNNER_TEMP/site"
+          rsync -a --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'apindex_tool' \
+            ./ "$RUNNER_TEMP/site/"
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.FORACTION }}
-          branch: ${{ github.ref }}
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
