@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Check for sabun changes
@@ -36,13 +36,13 @@ jobs:
           fi
       - name: Checkout apindex
         if: steps.changes.outputs.sabun == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: smclt30p/apindex
           path: apindex_tool
       - name: Set up Python 3.8
         if: steps.changes.outputs.sabun == 'true'
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v7
         with:
           python-version: 3.8
       - name: Generate sabun index
@@ -102,7 +102,7 @@ jobs:
           export TZ='Asia/Seoul'
           python apindex_tool/apindex.py ./sabun
       - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Stage site for deployment
         run: |
           mkdir -p "$RUNNER_TEMP/site"
@@ -112,9 +112,10 @@ jobs:
             --exclude 'apindex_tool' \
             ./ "$RUNNER_TEMP/site/"
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ runner.temp }}/site
+          include-hidden-files: true
 
   deploy:
     needs: build
